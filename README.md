@@ -4,7 +4,7 @@ Creates an EC2 server with Postgrest running, pointing to your database (probabl
 
 ## Option 1 - paste rhel7 as user-data (easier, less secure):
 
-1. Copy [the rhel7.sh file] (https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh) into the user-data field on a new RHEL7 EC2 instance
+1. Copy [the rhel7.sh file](https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh) into the user-data field on a new RHEL7 EC2 instance
 
 2. Update the first few lines of the pasted user-data in the AWS console to include your database connection details
 
