@@ -18,7 +18,7 @@
 echo "Update all software that shipped with the OS"
 yum -y update
 
-echo "Set Yum to autoupdate at 2am"
+echo "Set Yum to autoupdate at 2am UTC - change this if you arent in UTC!"
 cat <<HEREDOC > /etc/crontab.d/update-yum.crontab
 SHELL=/bin/bash 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin 
