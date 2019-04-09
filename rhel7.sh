@@ -1,4 +1,20 @@
 #!/bin/bash
+
+#################### OPTIONAL - Uncomment below if used ########################
+# echo "You can use this space to define your Postgrest config"
+# echo "But you should make sure this file is stored somewhere secure!"
+# echo "The below may be printing your DB password in plain text"
+#
+#
+# cat <<HEREDOC > /usr/local/bin/postgrest.conf
+# db-uri       = "postgres://user:pass@host:5432/dbname"
+# db-schema    = "api"
+# db-anon-role = "anon"
+# HEREDOC
+#
+#
+###################### OPTIONAL - Uncomment above if used ########################
+
 # Update all software that shipped with the OS
 yum -y update
 
@@ -22,7 +38,7 @@ cp postgrest /usr/local/bin
 
 # Define the postgrest service
 cat <<HEREDOC > /usr/local/bin/postgrest_service.sh
-postgrest /usr/local/bin/postgrest_config
+postgrest /usr/local/bin/postgrest.conf
 HEREDOC
 
 # Make the postgrest service executable
