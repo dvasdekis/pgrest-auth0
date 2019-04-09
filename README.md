@@ -11,8 +11,6 @@ It sets the instance to autoupdate, and installs postgrest as a system service, 
 
 2. Update the first few lines of the pasted user-data in the AWS console to [your intended postgrest.conf file](https://postgrest.org/en/v5.2/install.html#configuration), and uncomment them
 
-3. Remove SSH permissions from the inbound rules of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html). You ain't gonna need it.
-
 ## Install Option 2 - get it running manually (harder, more secure):
 
 1. Start an EC2 instance with a RHEL 7.x image (t2.micro with 10GB of local storage is plenty). 
