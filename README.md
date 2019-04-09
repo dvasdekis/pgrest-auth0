@@ -6,7 +6,7 @@ Creates an EC2 server with Postgrest running, pointing to your database (probabl
 
 1. Copy [the rhel7.sh file](https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh) into the user-data field on a new RHEL7 EC2 instance
 
-2. Update the first few lines of the pasted user-data in the AWS console to include your database connection details
+2. Update the first few lines of the pasted user-data in the AWS console to [your intended postgrest.conf file](https://postgrest.org/en/v5.2/install.html#configuration), and uncomment them
 
 3. Remove SSH permissions from the inbound rules of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html). You ain't gonna need it.
 
@@ -16,7 +16,7 @@ Creates an EC2 server with Postgrest running, pointing to your database (probabl
     Ensure the instance can talk to the database - recommend that it's in the same VPC and availability zone.
     Add SSH permissions to the inbound rules of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 
-2. Log in as ec2-user and copy your [postgrest config file](https://postgrest.org/en/v5.2/install.html#configuration) to /usr/local/bin/postgrest_config
+2. Log in as ec2-user and copy your [postgrest config file](https://postgrest.org/en/v5.2/install.html#configuration) to /usr/local/bin/postgrest.conf
 
 3. SSH in and run this:
 `curl  -sSL https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh | sudo sh`
