@@ -1,8 +1,11 @@
 # Postgrest on EC2
 Creates an EC2 server with Postgrest running, pointing to your database (probably RDS).
 
+### What does the shell script (rhel7.sh) do?
+It sets the instance to autoupdate, and installs postgrest as a system service, pointing to your database.
 
-## Option 1 - paste rhel7 as user-data (easier, less secure):
+
+## Install Option 1 - paste rhel7 as user-data (easier, less secure):
 
 1. Copy [the rhel7.sh file](https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh) into the user-data field on a new RHEL7 EC2 instance
 
@@ -10,7 +13,7 @@ Creates an EC2 server with Postgrest running, pointing to your database (probabl
 
 3. Remove SSH permissions from the inbound rules of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html). You ain't gonna need it.
 
-## Option 2 - get it running manually (harder, more secure):
+## Install Option 2 - get it running manually (harder, more secure):
 
 1. Start an EC2 instance with a RHEL 7.x image (t2.micro with 10GB of local storage is plenty). 
     Ensure the instance can talk to the database - recommend that it's in the same VPC and availability zone.
@@ -22,3 +25,4 @@ Creates an EC2 server with Postgrest running, pointing to your database (probabl
 `curl  -sSL https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh | sudo sh`
 
 4. Remove SSH permissions from the inbound rules of the [VPC security group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html). You ain't gonna need it.
+
