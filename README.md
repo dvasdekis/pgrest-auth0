@@ -1,7 +1,6 @@
 # Postgrest on EC2
 Creates an EC2 server with Postgrest running, pointing to your database (probably RDS).
 
-To use this, you need to get a Postgrest config file to the instance, so that Postgrest can talk to your RDS instance.
 
 ## Option 1 - paste rhel7 as user-data (easier, less secure):
 
