@@ -15,9 +15,6 @@
 #
 ###################### OPTIONAL - Uncomment above if used ########################
 
-echo "Update all software that shipped with the OS"
-yum -y update
-
 echo "Set Yum to autoupdate at 2am UTC - change this if you arent in UTC!"
 cat <<HEREDOC > /etc/crontab.d/update-yum.crontab
 SHELL=/bin/bash 
@@ -26,6 +23,9 @@ MAILTO=root
 HOME=/
 0 2 * * *  yum -y update
 HEREDOC
+
+echo "Update all software that shipped with the OS"
+yum -y update
 
 echo "Install dependencies - postgresql-libs is needed by postgrest"
 yum -y install postgresql-libs
