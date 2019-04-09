@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #################### OPTIONAL - Uncomment below if used ########################
 # echo "You can use this space to define your Postgrest config"
