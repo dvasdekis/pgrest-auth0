@@ -62,8 +62,5 @@ HEREDOC
 echo "Enable the service on boot"
 systemctl enable postgrest
 
-echo "Disable SSH for EC2-User"
-cat DenyUsers ec2-user >> /etc/ssh/sshd_config
-
 echo "Reboot the machine - installs kernel updates and starts postgrest service"
 reboot
