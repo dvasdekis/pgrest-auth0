@@ -18,12 +18,8 @@ exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 ###################### OPTIONAL - Uncomment above if used ########################
 
 echo "Set Yum to autoupdate at 2am UTC - change this if you arent in UTC!"
-cat <<HEREDOC > /etc/crontab.d/update-yum.crontab
-SHELL=/bin/bash 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin 
-MAILTO=root
-HOME=/
-0 2 * * *  yum -y update
+cat <<HEREDOC >> /etc/crontab
+0 2 * * * root yum -y update
 HEREDOC
 
 echo "Update all software that shipped with the OS"
