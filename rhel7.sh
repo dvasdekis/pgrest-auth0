@@ -62,5 +62,5 @@ HEREDOC
 echo "Enable the service on boot"
 systemctl enable postgrest
 
-echo "Reboot the machine - installs kernel updates and starts postgrest service"
-reboot
+#echo "Reboot the machine - installs kernel updates and starts postgrest service"
+#reboot
