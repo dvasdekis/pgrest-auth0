@@ -45,18 +45,19 @@ chmod +x /usr/local/bin/postgrest_service.sh
 echo "Install postgrest as a system service"
 cat <<HEREDOC > /etc/systemd/system/postgrest.service
 [Unit]
-Description = Postgrest as an EC2 system service from https://github.com/dvasdekis/postgrest-ec2/
-After = cloud-final.service
+Description=Postgrest as an EC2 system service from https://github.com/dvasdekis/postgrest-ec2/
+After=cloud-final.service
 StartLimitInterval=0
+StartLimitIntervalSec=0
 
 [Service]
-ExecStart = /usr/local/bin/postgrest_service.sh
-User = ec2-user
+ExecStart=/usr/local/bin/postgrest_service.sh
+User=ec2-user
 Restart=always
 RestartSec=1
 
 [Install]
-WantedBy = multi-user.target
+WantedBy=multi-user.target
 HEREDOC
 
 echo "Enable the service on boot"
