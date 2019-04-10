@@ -7,9 +7,11 @@ It sets the instance to autoupdate, and installs postgrest as a system service, 
 
 ## Install Option 1 - paste rhel7 as user-data (easier, less secure):
 
-1. Copy [the rhel7.sh file](https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh) into the user-data field on a new RHEL7 EC2 instance
+1. Copy [the rhel7.sh file](https://raw.githubusercontent.com/dvasdekis/postgrest-ec2/master/rhel7.sh) into the user-data field on a new RHEL7 EC2 instance. You don't need SSH permissions, so remove them.
 
-2. Update the first few lines of the pasted user-data in the AWS console to [your intended postgrest.conf file](https://postgrest.org/en/v5.2/install.html#configuration), and uncomment them
+2. Update the first few lines of the pasted user-data in the AWS console to [your intended postgrest.conf file](https://postgrest.org/en/v5.2/install.html#configuration), and uncomment them.
+
+Note: This method is less secure because your DB password will be stored in plaintext in your AWS logs
 
 ## Install Option 2 - get it running manually (harder, more secure):
 
